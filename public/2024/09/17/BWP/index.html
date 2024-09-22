@@ -21,21 +21,25 @@
   <meta name="author" content="gjh">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="BWP由于NR的信道带宽非常大，为了终端节能，NR种引入了BWP(BandWidth Part)的概念，BWP内的物理资源称为PRB，DL和UL最多同时配置4个BWP，但是同一时间只能有一个处于激活状态(但是也不可能所有BWP都处于非激活态)PDSCH,PDCCH,CSI-RS,PUSCH,PUCCH都必须要在激活的BWP内进行发送。对于FDD，上行BWP和下行BWP需要分别配置，对于TDD来说，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2024/09/10/hello-world/index.html">
+<meta property="og:title" content="BWP">
+<meta property="og:url" content="http://example.com/2024/09/17/BWP/index.html">
 <meta property="og:site_name" content="GJH的学习笔记">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="BWP由于NR的信道带宽非常大，为了终端节能，NR种引入了BWP(BandWidth Part)的概念，BWP内的物理资源称为PRB，DL和UL最多同时配置4个BWP，但是同一时间只能有一个处于激活状态(但是也不可能所有BWP都处于非激活态)PDSCH,PDCCH,CSI-RS,PUSCH,PUCCH都必须要在激活的BWP内进行发送。对于FDD，上行BWP和下行BWP需要分别配置，对于TDD来说，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-10T15:11:49.081Z">
-<meta property="article:modified_time" content="2024-09-10T15:10:18.527Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/gjhOVO/PicGo/main/PicGo/images20240917170904.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/gjhOVO/PicGo/main/PicGo/images20240917223853.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/gjhOVO/PicGo/main/PicGo/images20240917230932.png">
+<meta property="article:published_time" content="2024-09-17T09:21:30.000Z">
+<meta property="article:modified_time" content="2024-09-22T13:21:10.594Z">
 <meta property="article:author" content="gjh">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/gjhOVO/PicGo/main/PicGo/images20240917170904.png">
   
   
   
-  <title>Hello World - GJH的学习笔记</title>
+  <title>BWP - GJH的学习笔记</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -73,7 +77,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -177,7 +181,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="BWP"></span>
           
         </div>
 
@@ -188,8 +192,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-10 23:11" pubdate>
-          2024年9月10日 晚上
+        <time datetime="2024-09-17 17:21" pubdate>
+          2024年9月17日 下午
         </time>
       </span>
     
@@ -200,7 +204,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          669 字
         
       </span>
     
@@ -211,7 +215,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -248,24 +252,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">BWP</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="BWP"><a href="#BWP" class="headerlink" title="BWP"></a>BWP</h1><p>由于NR的信道带宽非常大，为了终端节能，NR种引入了BWP(BandWidth Part)的概念，BWP内的物理资源称为PRB，DL和UL最多同时配置4个BWP，但是同一时间只能有一个处于激活状态(但是也不可能所有BWP都处于非激活态)PDSCH,PDCCH,CSI-RS,PUSCH,PUCCH都必须要在激活的BWP内进行发送。对于FDD，上行BWP和下行BWP需要分别配置，对于TDD来说，上下行的BWP成对配置，上下行的BWP的中心频率必须相同，带宽可以不一样。</p>
+<p><img src="https://raw.githubusercontent.com/gjhOVO/PicGo/main/PicGo/images20240917170904.png" srcset="/img/loading.gif" lazyload alt="20240917170904"></p>
+<p>BWP有几种分类，InitialBWP，FirstActiveBWP，DefaultBWP和RegularBWP几种。</p>
+<h2 id="Initial-DL-UL-BWP"><a href="#Initial-DL-UL-BWP" class="headerlink" title="Initial DL&#x2F;UL BWP"></a>Initial DL&#x2F;UL BWP</h2><p>这种BWP用于RRC建立之前的初始访问，记为BWP0，在小区初始接入阶段当搜索到SIB1消息后，SIB1消息中携带了Initial DL&#x2F;UL BWP的相关信息。</p>
+<p>在还没有读到SIB1的时候，Initial DL BWP跟Coreset0是一样的频域范围，读到SIB1以后，用SIB1中的配置作为Initial DL&#x2F;UL BWP，并且用新的配置进行随机接入和RRC连接。<strong>SIB1中应当携带Initial DL BWP的信息，应当包含完整的Coreset0。</strong></p>
+<h2 id="First-Active-BWP"><a href="#First-Active-BWP" class="headerlink" title="First Active BWP"></a>First Active BWP</h2><p>可以给SpCell或者SCell配置,在MCG中SpCell等同于PCell,在SCG中,SpCell等同于PSCell。SCell在小区组的SpCell之上提供额外的无线资源。是SpCell进行RRC配置或重配时激活的UL&#x2F;DL BWP</p>
+<h2 id="Default-BWP"><a href="#Default-BWP" class="headerlink" title="Default BWP"></a>Default BWP</h2><p>网络会给UE配置一个BWP计时器统计UE是否超过一定时间在active BWP上没有接收也没发送数据，就从active BWP切换到default BWP进行节能。如果未配置，就用Initial DL BWP作为default BWP，对于TDD，切换DL active BWP和UL active BWP时同时的。而FDD是可以单独互相切换的。</p>
+<p><img src="https://raw.githubusercontent.com/gjhOVO/PicGo/main/PicGo/images20240917223853.png" srcset="/img/loading.gif" lazyload alt="20240917223853"></p>
+<h1 id="BWP配置"><a href="#BWP配置" class="headerlink" title="BWP配置"></a>BWP配置</h1><p>非BWP0配置分为common parameters和dedicated parameters,common是cell specific也就是小区通用的，对于不同的UE来说，这个参数必须通用。</p>
+<p>common parameters DL BWP包含小区特定的BWP参数(<strong>频域位置,带宽,SCS，循环前缀CP</strong>)以及DL BWP对于PDCCH和PDSCH的额外小区参数。UL BWP包含小区参数以及针对随机接入，PUCCH，PUSCH的参数。</p>
+<p>dedicated parameters DL BWP包含PDCCH,PDSCH以及semi-persistant 半持久调度以及链路监测配置。UL BWP包含PUSCH,PUCCH,SRS等。</p>
+<p><img src="https://raw.githubusercontent.com/gjhOVO/PicGo/main/PicGo/images20240917230932.png" srcset="/img/loading.gif" lazyload alt="20240917230932"></p>
+<p>如上图所示，BWP0有两种配置方式：</p>
+<p>Option1：只用cell-specific prarameters配置</p>
+<p>Option2：UE-specific和cell-specific同时使用</p>
+<p>Option1因为只有cell-specific参数，因此功能受限，只能用做临时作用，实际上还应该配置一个二者参数都有的BWP。因为没有UE参数，因此协议规定最多配置4个BWP，不算这个BWP0。</p>
+<p>Ootion2的BWP0就二者参数都有，因此不需要配置多个BWP，只需要BWP0就可以跟UE建立完全的连接。这个算在协议的4个BWP里面，因此还可以最多建立3个BWP。</p>
 
                 
               </div>
@@ -273,6 +281,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/5G/" class="category-chain-item">5G</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
 </div>
@@ -283,8 +312,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2024/09/10/hello-world/</div>
+      <div>BWP</div>
+      <div>http://example.com/2024/09/17/BWP/</div>
     </div>
     <div class="license-meta">
       
@@ -296,9 +325,14 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年9月10日</div>
+          <div>2024年9月17日</div>
         </div>
       
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年9月22日</div>
+        </div>
       
       
         <div class="license-meta-item">
@@ -307,9 +341,15 @@
             
               
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
                   </span>
                 </a>
               
@@ -328,15 +368,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/09/13/%E5%88%9D%E5%A7%8B%E6%8E%A5%E5%85%A5/" title="初始接入">
+                      <a href="/2024/09/17/5G%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="5G基础概念">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">初始接入</span>
+                        <span class="hidden-mobile">5G基础概念</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2024/09/13/%E5%88%9D%E5%A7%8B%E6%8E%A5%E5%85%A5/" title="初始接入">
+                        <span class="hidden-mobile">初始接入</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -389,8 +435,27 @@
 
 
 
+
+  
   
 
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
 
 
 
@@ -581,7 +646,48 @@
 </script>
 
 
-  <script>Fluid.plugins.imageCaption();</script>
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
